@@ -1,4 +1,0 @@
-relativeCoordinates = {
-  x: [];
-  y: [];
-}

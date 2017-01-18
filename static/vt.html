@@ -40,35 +40,36 @@
   </nav>
 
 	<div class = "section row grey darken-4" style = "height: 110vh;" id = "fusion">
-		<canvas id="game-canvas" width="1010" height="600"></canvas>
+	<div class = "col s12 m8 offset-m2 valign-wrapper">
+		<canvas id="game-canvas" class = "valign"></canvas>
+	</div>
 	</div>
 
 	
 	<div id = "footer"></div>
-	<script src = "/js/index.js"></script>
 </body>
 
-<script src="/js/pixi.min.js"></script>
-<script src="/js/dat.gui.js"></script>
-<script src="/js/stats.min.js"></script>
+<script src="/js/vt/pixi.min.js"></script>
+<script src="/js/vt/dat.gui.js"></script>
+<script src="/js/vt/stats.min.js"></script>
 <!--<script src="../tink/bin/tink.js"></script>-->
-<script src="/js/pixi.draggable.js"></script>
-<script src="/js/pixi.input.js"></script>
+<script src="/js/vt/pixi.draggable.js"></script>
+<script src="/js/vt/pixi.input.js"></script>
 <!--<script src="../sound.js/sound.js"></script>-->
-<script src="/js/howler.js"></script>
-<script src="js/TweenMax.min.js"></script>
-<script src="/js/kinematica_ui.js"></script>
-<script src="/js/toka_physics_dev.js"></script>
-<script src="/js/functions_dev.js"></script>
-<script src="/js/Ziggurat.js"></script>
-<script src="/js/setup.js"></script>
-<script src="/js/intro.js"></script>
-<script src="/js/play.js"></script>
-<script src="/js/endgame.js"></script>
-<script src="/js/createModals.js"></script>
-<script src="/js/exchangerFlows.js"></script>
-<script src="/js/lightWindows.js"></script>
-<script src="/js/pixi.draggable.releaseAll.js"></script>
+<script src="/js/vt/howler.js"></script>
+<script src="/js/vt/TweenMax.min.js"></script>
+<script src="/js/vt/kinematica_ui.js"></script>
+<script src="/js/vt/toka_physics_dev.js"></script>
+<script src="/js/vt/functions_dev.js"></script>
+<script src="/js/vt/Ziggurat.js"></script>
+<script src="/js/vt/setup.js"></script>
+<script src="/js/vt/intro.js"></script>
+<script src="/js/vt/play.js"></script>
+<script src="/js/vt/endgame.js"></script>
+<script src="/js/vt/createModals.js"></script>
+<script src="/js/vt/exchangerFlows.js"></script>
+<script src="/js/vt/lightWindows.js"></script>
+<script src="/js/vt/pixi.draggable.releaseAll.js"></script>
 
 <script>
     //Parameters
@@ -175,7 +176,6 @@
     var maxElectric = 1448;
     // var keyObject = keyboard(asciiKeyCodeNumber);
 
-
     // //PIXI start
     // var PIXI = require('../pixi.js');
     // var keyboard = require('pixi-keyboard');
@@ -264,21 +264,21 @@
     var loader = PIXI.loader;
     loader
         .add([
-        "img/ippexsprites.json"
+        "images/vt/ippexsprites.json"
         ])
         .on("progress", loadProgressHandler)
 
     var loaderModals = PIXI.loader;
     loaderModals
         .add([
-        "img/ippexspritesModals.json"
+        "images/vt/ippexspritesModals.json"
         ])
         .on("progress", loadProgressHandler)
 
     var loaderGlobalModals = PIXI.loader;
     loaderGlobalModals
         .add([
-        "img/ippexspritesGlobalModals.json"
+        "images/vt/ippexspritesGlobalModals.json"
         ])
         .on("progress", loadProgressHandler)
         .load(setup);
