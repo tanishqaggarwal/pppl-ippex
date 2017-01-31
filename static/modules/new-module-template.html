@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/flickity.css" media="screen">
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	<script> 
+		$(function(){
+			$("#footer").load("/footer.html"); 
+		});
+	</script> 
+	<style>
+	/* white circles */
+	.flickity-page-dots .dot {
+	  width: 12px;
+	  height: 12px;
+	  opacity: 1;
+	  background: transparent;
+	  border: 2px solid white;
+	}
+	/* fill-in selected dot */
+	.flickity-page-dots .dot.is-selected {
+	  background: white;
+	}
+	</style>
+
+	<meta property="og:url"                content="" />
+	<meta property="og:title"              content="Interactive Plasma Physics Experience (IPPEX)" />
+	<meta property="og:description"        content="" />
+	<meta property="og:image"              content="" />
+
+	<title>IPPEX | Physics Modules | MODULE NAME</title>
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+	<nav class = "grey darken-3">
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">MODULE NAME</a>
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li><a href="../physics-modules.html"><i class="material-icons">arrow_back</i></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class = "section row grey darken-4" style = "min-height : 100vh;">
+		<div class = "container">
+			<div class = "row">
+			<div class = "col s12 m9">
+				<div class = "section scrollspy">
+					<h1 class = "white-text">Heading 1</h1>
+				</div>
+				<button class = "btn btn-large grey darken-3 white-text">NEXT PAGE</button>
+			</div>
+			<div class = 'col hide-on-small-only m3'>
+				<ul class="section grey-text table-of-contents">
+				<h5 class = "white-text">On this page</h5>
+			        <li><a href="#introduction"><b>Heading 1</b></a></li>
+			        <li><a href="#structure"><b>Heading 2</b></a></li>
+			        <li><a href="#initialization"><b>Heading 3</b></a></li>
+			        <li></li>
+			        <li></li>
+			        <li></li>
+			        <li><a href="#initialization">Next Page</a></li>
+			      </ul>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id = "footer"></div>
+</body>
+<script type = "text/javascript">
+	$(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
+</script>
+</html>
