@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1010 660" enable-background="new 0 0 1010 660" xml:space="preserve">
+<g id="Layer_1">
+	<rect x="0" y="0" fill="#231F20" width="1010" height="660"/>
+</g>
+<g id="Layer_2">
+	<polyline fill="#0A2332" stroke="#165B7B" stroke-miterlimit="10" points="988,663 988,510.1 18,510.1 18,663 	"/>
+	<circle fill="#193634" stroke="#558139" stroke-miterlimit="10" cx="640.5" cy="623.4" r="9.9"/>
+	<polyline fill="none" stroke="#558139" stroke-miterlimit="10" points="640.5,535.4 640.5,623.4 654.6,623.4 	"/>
+	<circle fill="#193634" stroke="#558139" stroke-miterlimit="10" cx="640.5" cy="579.4" r="2.4"/>
+	<circle fill="#193634" stroke="#558139" stroke-miterlimit="10" cx="640.5" cy="535.4" r="2.4"/>
+	<line fill="none" stroke="#165B7B" stroke-miterlimit="10" x1="607.1" y1="522" x2="607.1" y2="648"/>
+	<line fill="none" stroke="#165B7B" stroke-miterlimit="10" x1="600.5" y1="522" x2="600.5" y2="648"/>
+</g>
+<g id="Layer_3">
+	
+		<rect x="529.6" y="350.1" transform="matrix(6.123234e-17 -1 1 6.123234e-17 245.6603 976.5193)" fill="#165B7B" stroke="#26A7DD" stroke-miterlimit="10" width="163" height="30.7"/>
+	
+		<rect x="115.8" y="397.4" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -262.8874 562.7104)" fill="#165B7B" stroke="#26A7DD" stroke-miterlimit="10" width="68.2" height="30.7"/>
+	<rect x="170.4" y="446.9" fill="#165B7B" stroke="#26A7DD" stroke-miterlimit="10" width="425.3" height="30.7"/>
+	<rect x="-31.5" y="249.2" fill="#322850" width="98" height="98"/>
+	<text transform="matrix(1 0 0 1 662.433 542.2531)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">Temperature:</text>
+	<text transform="matrix(1 0 0 1 662.4326 584.9977)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">Electric Power:</text>
+	<text transform="matrix(1 0 0 1 79.3557 542.822)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">Density:</text>
+	<text transform="matrix(1 0 0 1 937.9838 547.2568)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="15px">keV</text>
+	<text transform="matrix(1 0 0 1 937.9833 586.4306)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="15px">MW</text>
+	<text transform="matrix(1 0 0 1 662.4335 634.7722)" fill="#FFFFFF" font-family="'Helvetica-Bold'" font-size="30px">Score:</text>
+	<g>
+		<g>
+			<g>
+				<line fill="none" stroke="#8DC63F" stroke-width="2" stroke-miterlimit="10" x1="54.3" y1="571.9" x2="180.7" y2="571.9"/>
+				<g>
+					<polygon fill="#8DC63F" points="57.2,581.8 39.9,571.9 57.2,561.9 					"/>
+				</g>
+				<g>
+					<polygon fill="#8DC63F" points="177.8,581.8 195,571.9 177.8,561.9 					"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="60.7" y="562" fill="#558139" width="9.4" height="19.7"/>
+			<path fill="#FFFFFF" d="M69.1,563v17.7h-7.4V563H69.1 M71.1,561H59.7v21.7h11.4V561L71.1,561z"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 866.8754 547.2575)" fill="#FFFFFF" font-family="'Helvetica'" font-size="25px">1.115</text>
+	<text transform="matrix(1 0 0 1 857.9252 586.5624)" fill="#ED1C24" font-family="'Helvetica'" font-size="25px">-2.790</text>
+	<text transform="matrix(1 0 0 1 93.4904 635.4113)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="15px">m^(-3)</text>
+	<text transform="matrix(1 0 0 1 84.6325 615.3737)" fill="#FFFFFF" font-family="'Helvetica'" font-size="25px">01.00</text>
+	<text transform="matrix(1 0 0 1 251.562 542.822)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">Aux. Power:</text>
+	<g>
+		<g>
+			<g>
+				<line fill="none" stroke="#8C4682" stroke-width="2" stroke-miterlimit="10" x1="244.5" y1="571.9" x2="370.9" y2="571.9"/>
+				<g>
+					<polygon fill="#8C4682" points="247.4,581.8 230.1,571.9 247.4,561.9 					"/>
+				</g>
+				<g>
+					<polygon fill="#8C4682" points="367.9,581.8 385.2,571.9 367.9,561.9 					"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="250.9" y="562" fill="#5A326E" width="9.4" height="19.7"/>
+			<path fill="#FFFFFF" d="M259.3,563v17.7h-7.4V563H259.3 M261.3,561h-11.4v21.7h11.4V561L261.3,561z"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 294.3716 636.3068)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="15px">MW</text>
+	<text transform="matrix(1 0 0 1 274.8178 615.3732)" fill="#FFFFFF" font-family="'Helvetica'" font-size="25px">00.00</text>
+	<text transform="matrix(1 0 0 1 425.685 542.822)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">Magnetic Field:</text>
+	<g>
+		<g>
+			<g>
+				<line fill="none" stroke="#26A7DD" stroke-width="2" stroke-miterlimit="10" x1="435.1" y1="571.9" x2="561.5" y2="571.9"/>
+				<g>
+					<polygon fill="#26A7DD" points="438.1,581.8 420.8,571.9 438.1,561.9 					"/>
+				</g>
+				<g>
+					<polygon fill="#26A7DD" points="558.6,581.8 575.9,571.9 558.6,561.9 					"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="441.5" y="562" fill="#165B7B" width="9.4" height="19.7"/>
+			<path fill="#FFFFFF" d="M449.9,563v17.7h-7.4V563H449.9 M451.9,561h-11.4v21.7h11.4V561L451.9,561z"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 493.9868 636.307)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="15px">T</text>
+	<text transform="matrix(1 0 0 1 465.5009 615.3727)" fill="#FFFFFF" font-family="'Helvetica'" font-size="25px">03.00</text>
+	<text transform="matrix(1 0 0 1 853.8632 633.8185)" fill="#FFFFFF" font-family="'Helvetica-Bold'" font-size="30px">2.782</text>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="57.3,581.9 39.9,571.9 57.3,561.8 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="177.7,561.8 195,571.9 177.7,581.9 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="367.8,561.8 385.2,571.9 367.8,581.9 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="558.5,561.8 575.9,571.9 558.5,581.9 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="247.5,581.9 230.1,571.9 247.5,561.8 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="438.2,581.9 420.8,571.9 438.2,561.8 	"/>
+	<rect x="22.4" y="27.4" fill="#0D3042" stroke="#FFFFFF" stroke-miterlimit="10" width="234.9" height="34.1"/>
+	<rect x="757.5" y="27.4" fill="#193634" stroke="#FFFFFF" stroke-miterlimit="10" width="234.9" height="34.1"/>
+	<rect x="377.9" y="30.9" fill="#FFFFFF" stroke="#322850" stroke-miterlimit="10" width="268.2" height="34.1"/>
+	<rect x="374.3" y="27.4" fill="#5A326E" stroke="#FFFFFF" stroke-miterlimit="10" width="268.2" height="34.1"/>
+	<text transform="matrix(1 0 0 1 394.477 51.7663)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">VIEW HEAT EXCHANGE</text>
+	<text transform="matrix(1 0 0 1 824.3491 51.7663)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">VIEW CITY</text>
+	<text transform="matrix(1 0 0 1 63.562 51.7663)" fill="#FFFFFF" font-family="'Helvetica-Light'" font-size="20px">VIEW REACTOR</text>
+	<rect x="210.1" y="270.7" fill="#165B7B" stroke="#26A7DD" stroke-miterlimit="10" width="194.5" height="54.2"/>
+	<rect x="439.5" y="282.8" fill="#165B7B" stroke="#26A7DD" stroke-miterlimit="10" width="184.5" height="30.7"/>
+	
+		<rect x="112.3" y="161.2" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 319.054 22.8806)" fill="#558139" stroke="#8DC63F" stroke-miterlimit="10" width="71.6" height="19.4"/>
+	
+		<rect x="350.6" y="206.9" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 648.727 -215.4384)" fill="#558139" stroke="#8DC63F" stroke-miterlimit="10" width="163" height="19.4"/>
+	<rect x="161" y="113.1" fill="#558139" stroke="#8DC63F" stroke-miterlimit="10" width="257.5" height="19.4"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="270.7" x2="1074.7" y2="270.7"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="279.7" x2="1074.7" y2="279.7"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="288.7" x2="1074.7" y2="288.7"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="297.8" x2="1074.7" y2="297.8"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="306.8" x2="1074.7" y2="306.8"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="315.8" x2="1074.7" y2="315.8"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="324.8" x2="1074.7" y2="324.8"/>
+	<line fill="none" stroke="#5A326E" stroke-miterlimit="10" x1="918.4" y1="333.9" x2="1074.7" y2="333.9"/>
+	<g>
+		<circle fill="#0A2332" stroke="#165B7B" stroke-miterlimit="10" cx="148.2" cy="297.7" r="99"/>
+		<circle fill="#193634" stroke="#558139" stroke-miterlimit="10" cx="148.2" cy="297.7" r="80.2"/>
+		<circle fill="#0A2332" stroke="#558139" stroke-miterlimit="10" cx="148.2" cy="297.7" r="49.6"/>
+		<circle fill="#231F20" stroke="#165B7B" stroke-miterlimit="10" cx="148.2" cy="297.7" r="29.2"/>
+		<circle fill="#0A2332" stroke="#165B7B" stroke-miterlimit="10" cx="148.2" cy="297.7" r="13.4"/>
+		<g>
+			
+				<rect x="185.3" y="188" transform="matrix(0.7071 0.7071 -0.7071 0.7071 232.4875 -69.4351)" fill="#0D3042" stroke="#165B7B" stroke-width="2" stroke-miterlimit="10" width="29.5" height="115.9"/>
+		</g>
+		<g>
+			
+				<rect x="82.1" y="188.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -145.8301 140.6216)" fill="#0D3042" stroke="#165B7B" stroke-width="2" stroke-miterlimit="10" width="29.5" height="115.9"/>
+		</g>
+		<g>
+			
+				<rect x="82.1" y="291.6" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -81.8857 665.2269)" fill="#0D3042" stroke="#165B7B" stroke-width="2" stroke-miterlimit="10" width="29.5" height="115.9"/>
+		</g>
+		<g>
+			
+				<rect x="185.3" y="291.2" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 588.4082 454.5711)" fill="#0D3042" stroke="#165B7B" stroke-width="2" stroke-miterlimit="10" width="29.5" height="115.9"/>
+		</g>
+	</g>
+	
+		<rect x="527.7" y="279.2" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 974.5454 -385.3448)" fill="#5A326E" stroke="#8C4682" stroke-miterlimit="10" width="304.6" height="30.7"/>
+	
+		<rect x="711.8" y="283.6" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 1165.8584 -567.8595)" fill="#5A326E" stroke="#8C4682" stroke-miterlimit="10" width="310.2" height="30.7"/>
+	
+		<rect x="698.7" y="111.6" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 1552.4908 253.9237)" fill="#5A326E" stroke="#8C4682" stroke-miterlimit="10" width="155" height="30.7"/>
+	
+		<rect x="695.3" y="446.9" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 1546.8041 924.4776)" fill="#5A326E" stroke="#8C4682" stroke-miterlimit="10" width="156.2" height="30.7"/>
+	<rect x="577.5" y="249.2" fill="#0D3042" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" width="138.4" height="98"/>
+	<rect x="798.5" y="249.2" fill="#322850" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" width="138.4" height="98"/>
+	<rect x="362.9" y="249.2" fill="#193634" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" width="138.4" height="98"/>
+	<path fill="#193634" stroke="#558139" stroke-miterlimit="10" d="M163.6,107.3c-17.2,0-31.1,13.9-31.1,31.1h31.1V107.3z"/>
+	<path fill="#0D3042" stroke="#165B7B" stroke-miterlimit="10" d="M125.6,436.9c0,27.1,22,49.1,49.1,49.1v-49.1H125.6z"/>
+	<path fill="#322850" stroke="#5A326E" stroke-miterlimit="10" d="M704.4,102.4c-27.1,0-49.1,22-49.1,49.1h49.1V102.4z"/>
+	<path fill="#322850" stroke="#5A326E" stroke-miterlimit="10" d="M655.5,436.9c0,27.1,22,49.1,49.1,49.1v-49.1H655.5z"/>
+	<path fill="#0D3042" stroke="#165B7B" stroke-miterlimit="10" d="M586.9,486c27.1,0,49.1-22,49.1-49.1h-49.1V486z"/>
+	<path fill="#322850" stroke="#5A326E" stroke-miterlimit="10" d="M842.1,486c27.1,0,49.1-22,49.1-49.1h-49.1V486z"/>
+	<path fill="#193634" stroke="#558139" stroke-miterlimit="10" d="M416.5,107.3v31.1h31.1C447.6,121.2,433.7,107.3,416.5,107.3z"/>
+	<path fill="#322850" stroke="#5A326E" stroke-miterlimit="10" d="M841.3,102.4v49.1h49.1C890.4,124.4,868.4,102.4,841.3,102.4z"/>
+</g>
+</svg>

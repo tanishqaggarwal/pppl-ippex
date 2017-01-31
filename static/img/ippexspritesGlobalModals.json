@@ -1,0 +1,93 @@
+{"frames": {
+
+"modalAuxSlider.png":
+{
+	"frame": {"x":680,"y":561,"w":680,"h":387},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":387},
+	"sourceSize": {"w":680,"h":387},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalBetaLimit.png":
+{
+	"frame": {"x":1360,"y":561,"w":340,"h":430},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":430},
+	"sourceSize": {"w":340,"h":430},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalDensity.png":
+{
+	"frame": {"x":1360,"y":258,"w":672,"h":303},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":672,"h":303},
+	"sourceSize": {"w":672,"h":303},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalDensLimit.png":
+{
+	"frame": {"x":0,"y":0,"w":680,"h":210},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":210},
+	"sourceSize": {"w":680,"h":210},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalElectric.png":
+{
+	"frame": {"x":0,"y":258,"w":680,"h":275},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":275},
+	"sourceSize": {"w":680,"h":275},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalMagSlider.png":
+{
+	"frame": {"x":680,"y":258,"w":680,"h":285},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":285},
+	"sourceSize": {"w":680,"h":285},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalScore.png":
+{
+	"frame": {"x":680,"y":0,"w":680,"h":235},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":235},
+	"sourceSize": {"w":680,"h":235},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalTemperature.png":
+{
+	"frame": {"x":1360,"y":0,"w":680,"h":258},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":258},
+	"sourceSize": {"w":680,"h":258},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"modalWall.png":
+{
+	"frame": {"x":0,"y":561,"w":680,"h":322},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":322},
+	"sourceSize": {"w":680,"h":322},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ippexspritesGlobalModals.png",
+	"format": "RGBA8888",
+	"size": {"w":2040,"h":991},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:02121f0e2286f6b43778a0e9b7e0a314:6edcd9e5e597494dfdcd1898ca57e405:86f65a3b376ee8bdd3407bf243d14771$"
+}
+}

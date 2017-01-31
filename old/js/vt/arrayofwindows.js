@@ -1,0 +1,4 @@
+relativeCoordinates = {
+  x: [];
+  y: [];
+}

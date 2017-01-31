@@ -1,30 +1,171 @@
-html { 
-	font-family: 'Lato', sans-serif;
-	background-color: #212121;
+
+
+/* general styles */
+html, body {
+height: 100%;
+width: 100%;
+color: #cccccc;
+/*color:red*/
 }
-.frontimage {
-	background: linear-gradient(
-		rgba(0,0,0, 0.25), 
-		rgba(0,0,0, 0.25)
-		), url(/images/cmod.jpg) no-repeat center fixed;*/
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+/* padded section */
+.pad-section {
+padding: 50px 0;
+}
+.pad-section img {
+width: 100%;
+}
+/* vertical-centered text */
+.text-vcenter {
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
+.text-vcenter h1 {
+font-size: 4.5em;
+font-weight: 700;
+margin: 0;
+padding: 0;
+/*color: "white";*/
+}
+/* additional sections */
+#home {
+background: url(../images/Ellesbigball.jpg) no-repeat center center fixed; 
+display: table;
+height: 100%;
+position: relative;
+width: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+/*color:red;*/
+}
+#welcome {
+background-color: #000000;
+}
+#modules {
+background-color: white;
+color: #4d4d4d;
+/*color: #ffffff;*/
+}
+#started {
+    color : #2C3E50;
 }
 
-.center-div {
-	position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    margin: auto;
+#modules .glyphicon {
+border: 2px solid #FFFFFF;
+border-radius: 50%;
+display: inline-block;
+font-size: 60px;
+height: 140px;
+line-height: 140px;
+text-align: center;
+vertical-align: middle;
+width: 140px;
 }
-.bottom-div {
-	position: absolute;
-	width: 100%;
-	margin: 0 auto;
-	bottom: 0;
+#fusion {
+background: url(../images/cmod.jpg) no-repeat center center fixed; 
+display: table;
+height: 800px;
+position: relative;
+width: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+#remote {
+    background-color: black;
+}
+
+#physicist {
+    color : #2C3E50;
+}
+
+#information .panel {
+opacity: 0.85;
+}
+#google_map {
+height: 500px;
+}
+.inverted-bar {
+    position: relative;
+}
+
+.inverted-bar:before,
+.inverted-bar:after {
+    padding: 10px 0;
+    text-indent: 10px;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    content: attr(data-content);
+}
+
+.inverted-bar:before {
+    background-color: aqua;
+    color: red;
+    width: 100%;
+}
+
+.inverted-bar:after {
+    background-color: red;
+    color: aqua;
+    width: 20%;
+}
+.stylish-panel {
+    padding: 20px 0;
+    text-align: center;
+}
+.stylish-panel > div > div{
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.stylish-panel > div:hover > div{
+    margin-top: -10px;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    background: rgba(200, 200, 200, 0.1);
+    transition: 0.5s;
+}
+
+.stylish-panel > div:hover img {
+    border-radius: 50%;
+/*    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);*/
+}
+.responsive-video {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 60px; overflow: hidden;
+}
+
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+
+
+
+footer {
+padding: 20px 0;
+}
+footer .glyphicon {
+color: #333333;
+font-size: 60px;
+}
+footer .glyphicon:hover {
+color: #306d9f;
 }
