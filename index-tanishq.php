@@ -1,34 +1,79 @@
 <?php
 
+$name = "";
+$email = "";
+$comment = "";
+
 if ($_POST["submit"]) {
 
-            
-            
          if (!$_POST['name']) {
 
              $error="<br />Please enter your name";
 
+         } else {
+
+             $name = strip_tags($_POST["name"]);
+             $name = htmlspecialchars($name, ENT_QUOTES);
+             $name = addslashes($name);
+
          }
-            
+
          if (!$_POST['email']) {
 
              $error.="<br />Please enter your email address";
 
+         } else {
+
+             $email = strip_tags($_POST["email"]);
+             $email = htmlspecialchars($email, ENT_QUOTES);
+             $email = addslashes($email);
+
          }
-            
+
          if (!$_POST['comment']) {
 
              $error.="<br />Please enter a comment";
 
+         } else {
+
+             $comment = strip_tags($_POST["comment"]);
+             $comment = htmlspecialchars($comment, ENT_QUOTES);
+             $comment = addslashes($comment);
+
          }
-            
+
          if ($_POST['email']!="" AND !filter_var($_POST['email'],
 FILTER_VALIDATE_EMAIL)) {
-            
+
          $error.="<br />Please enter a valid email address";
 
          }
-            
+
+         $url = 'https://www.google.com/recaptcha/api/siteverify';
+         $data = array('secret' => '6LdJZRkUAAAAACOZbdBDE4vZp2bTsR_MzLb-bWPI', 'response' => $_POST['g-recaptcha-response']);
+
+         foreach($data as $key=>$value) { $data_string .= $key.'='.$value.'&'; }
+         $data_string = rtrim($data_string,'&');
+
+         $ch = curl_init();
+         curl_setopt($ch,CURLOPT_URL,$url);
+         curl_setopt($ch,CURLOPT_POST,count($data));
+         curl_setopt($ch,CURLOPT_POSTFIELDS,$data_string);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+         $result = curl_exec($ch);
+
+         if ($result === false) {
+            $error.="<br />Checking reCaptcha failed. Please try again";
+         } else {
+            $decoded = json_decode($result, true);
+
+            if ($decoded[success] != true) {
+               $error.="<br />Please try solving the reCaptcha again";
+            }
+         }
+
+
          if ($error) {
 
  $result='<div class="alert alert-danger"><strong>There were error(s)
@@ -39,7 +84,9 @@ in your form:</strong>'.$error.'</div>';
  if (mail("adomingu@pppl.gov", "IPPEX ask a physicist", "Name: ".
 $_POST['name']."
 
- Email: ".$_POST['email']."Comment: ".$_POST['comment'])) {
+ Email: ".$_POST['email']."
+
+ Comment: ".$_POST['comment'])) {
 
  $result='<div class="alert alert-success"><strong>Thank
 you!</strong> We\'ll be in touch.</div>';
@@ -55,8 +102,11 @@ an error sending your message. Please try again later.</div>';
 
  }
 
-
  }
+
+
+
+
 
  ?>
 
@@ -70,7 +120,7 @@ an error sending your message. Please try again later.</div>';
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <!-- attach CSS styles -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="./css/style.css" rel="stylesheet" />
+<link href="./css/style-tanishq.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" href="toka.css"> -->
 <link rel="stylesheet" href="bower_components/katex/dist/katex.min.css">
@@ -87,17 +137,19 @@ an error sending your message. Please try again later.</div>';
 <script src="howler.js/howler.js"></script>
 <script src="libs/util/TweenMax.min.js"></script>
 <script src="libs/kinematica/ui.js"></script>
-<script src="toka_physics_dev.js"></script>
-<script src="functions_dev.js"></script>
+<script src="toka_physics.js"></script>
+<script src="functions.js"></script>
 <script src="Ziggurat.js"></script>
 <script src="setup.js"></script>
 <script src="intro.js"></script>
+<script src="front.js"></script>
 <script src="play.js"></script>
 <script src="endgame.js"></script>
 <script src="createModals.js"></script>
 <script src="exchangerFlows.js"></script>
 <script src="lightWindows.js"></script>
 <script src="pixi.draggable.releaseAll.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <style>
     .emailForm {
@@ -107,13 +159,13 @@ an error sending your message. Please try again later.</div>';
     }
     form {
      padding-bottom:20px;
-            
+
     }
 </style>
 
 </head>
 <body>
-	   
+
 <!--  BODY PAGE CONTENT -->
 
 
@@ -137,6 +189,7 @@ an error sending your message. Please try again later.</div>';
 <li><a href="#fusion">What is Fusion</a></li>
 <li><a href="#vt">Virtual Tokamak</a></li>
 <li><a href="#remote">Remote Experiments</a></li>
+<li><a href="#physics-modules">Physics Modules</a></li>
 <li><a href="#physicist">Ask a Plasma Phycisist</a></li>
 <!-- <li><a href="https://www.script-tutorials.com/bootstrap-one-page-template-with-parallax-effect/">Back to tutorial</a></li> -->
 </ul>
@@ -151,7 +204,7 @@ an error sending your message. Please try again later.</div>';
             <h1>IPPEX</h1>
             <h3>The Interactive Plasma Physics Experience</h3>
             <a href="#welcome" class="btn btn-default btn-lg">Continue</a>
-        </div>       
+        </div>
         <div >
             <!-- <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> -->
         </div>
@@ -212,28 +265,35 @@ an error sending your message. Please try again later.</div>';
         <h2>Getting Started</h2>
         <p class="lead">Visit the sections below to explore different aspects of plasma physics and magnetically confined fusion.</p>
         <div class="row stylish-panel">
-            <div class="col-sm-3">
+            <div class="col-sm-2 col-sm-offset-1">
                 <div>
                     <a href="#fusion"><img src="images/fusion_square.png" alt="Texto Alternativo" class="img-circle img-thumbnail"></a>
                     <h2>What is<br>Fusion</h2>
                     <p>Watch a Phd Comics animated video on magnetic confinement fusion.</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div>
                     <a href="#vt"><img src="images/vt_square.png" alt="Texto Alternativo" class="img-circle img-thumbnail"></a>
                     <h2>Virtual<br>Tokamak</h2>
                     <p>Control a virtual tokamak and, in the process, learn about creating electricity using magnetic confinement fusion.</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
+                <div>
+                    <a href="#physics-modules"><img src="images/magnet_square.png" alt="Texto Alternativo" class="img-circle img-thumbnail"></a>
+                    <h2>Physics<br>Modules</h2>
+                    <p>Delve into the science behind nuclear fusion with interactive experiments.</p>
+                </div>
+            </div>
+            <div class="col-sm-2">
                 <div>
                     <a href="#remote"><img src="images/rgdx_square.png" alt="Texto Alternativo" class="img-circle img-thumbnail"></a>
                     <h2>Remote<br>Experiments</h2>
                     <p>Remotely log into plasma experiments located at PPPL and control them through your browser.</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div>
                     <a href="#physicist"><img src="images/ask.png" alt="Texto Alternativo" class="img-circle img-thumbnail"></a>
                     <h2>Ask a Plasma</br>Physicist</h2>
@@ -260,11 +320,11 @@ an error sending your message. Please try again later.</div>';
         <div>
         <!-- <div class="embed-responsive embed-responsive-16by9" width="1010" height="600"> -->
             <!-- <iframe width="1010" height="568" src="./phdcomic.mp4" autostart="0" autoplay="0" frameborder="0" allowfullscreen controls></iframe> -->
-            <video width="1010" height="568" controls="controls">  
-                <source src="./phdcomic.mp4" />   
-                <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->     
+            <video width="1010" height="568" controls="controls">
+                <source src="./phdcomic.mp4" />
+                <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->
                 Nav doesn't support html5 video
-            </video> 
+            </video>
         </div>
     </div>
     <br><br>
@@ -290,6 +350,63 @@ an error sending your message. Please try again later.</div>';
     <br><br>
 </div>
 <!-- /fourth section -->
+<div id="physics-modules" class="pad-section" style="color: black;">
+    <div class="container text-center">
+        <h2>Physics Modules</h2>
+        <p class="lead">Explore and gain an understanding of the essential physics behind nuclear fusion through interactive experiments.</p>
+        <p class="lead">More modules coming soon!</p>
+        <div class="row stylish-panel">
+            <div class="col-sm-4">
+                <div>
+                    <a><img src="rgdx_gif.gif" alt="Texto Alternativo" class="img-thumbnail" data-toggle="modal" data-target="#physics-module-1"></a>
+                    <h2>What <i>is</i> Electricity?</h2>
+                    <p>Why does the phrase "opposites attract" exist? Learn about Coloumb's law and how electricity works.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a><img src="rgdx_gif.gif" alt="Texto Alternativo" class="img-thumbnail"></a>
+                    <h2>Why do Atoms Stay Together?</h2>
+                    <p>Learn about the strong force and its critical role in nuclear fusion in this module.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a><img src="rgdx_gif.gif" alt="Texto Alternativo" class="img-thumbnail"></a>
+                    <h2>States of Matter</h2>
+                    <p>What makes a block of ice different from a glass of water, beyond just the obvious temperature difference? What <i>is</i> temperature? Find out more in this module.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row stylish-panel">
+            <div class="col-sm-4 col-md-offset-2">
+                <div>
+                    <a><img src="rgdx_gif.gif" alt="Texto Alternativo" class="img-thumbnail" data-toggle="modal" data-target="#physics-module-1"></a>
+                    <h2>What <i>is</i> Electricity?</h2>
+                    <p>Why does the phrase "opposites attract" exist? Learn about Coloumb's law and how electricity works.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a><img src="rgdx_gif.gif" alt="Texto Alternativo" class="img-thumbnail"></a>
+                    <h2>Why do Atoms Stay Together?</h2>
+                    <p>Learn about the strong force and its critical role in nuclear fusion in this module.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="physics-module-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body" style="overflow:hidden;">
+            <iframe src = "/physics-modules/module-1.html" style="border:none; width: 100%; height:100%;" scrolling = "no" frameborder = "0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- /fifth section -->
 <div id="remote" class="pad-section">
     <div class="container text-center">
         <h2>Remote Experiments</h2>
@@ -322,19 +439,20 @@ an error sending your message. Please try again later.</div>';
             <form method="post">
                 <div class="form-group">
                     <label for="name">Your Name:</label>
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" 
-                    value="<?php echo $_POST['name']; ?>" />
+                    <input type="text" name="name" class="form-control" placeholder="Your Name"
+                    value="<?php echo $name; ?>" />
                 </div>
                 <div class="form-group">
                     <label for="email">Your Email:</label>
-                    <input type="email" name="email" class="form-control" placeholder="Your Email" 
-                    value="<?php echo $_POST['email']; ?>" />
+                    <input type="email" name="email" class="form-control" placeholder="Your Email"
+                    value="<?php echo $email; ?>" />
                 </div>
                 <div class="form-group">
                     <label for="comment">Your Question:</label>
-                    <textarea class="form-control" name="comment"> <?php echo $_POST['comment'];  ?> 
-                    </textarea>
+                    <textarea class="form-control" name="comment"><?php echo $comment;  ?></textarea>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6LdJZRkUAAAAAOo0KHewzsV07qhTTSD15C9-VfRe"></div>
+                </br>
                 <input type="submit" name="submit" class="btn btn-success btn-lg" value="Submit"/>
             </form>
         </div>
@@ -388,10 +506,14 @@ Princeton, NJ, 08540
 </footer>
 <!-- /footer -->
 
+<!-- Run VT -->
+<script src="./main.js"></script>
+
 <!-- attach JavaScripts -->
-<script src="js/jquery-1.10.2.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="./parameters.js"></script>
+<!--<script src="js/jquery-1.10.2.js"></script>
+<script src="js/bootstrap.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- <script src="//maps.google.com/maps/api/js?sensor=true"></script> -->
 <!-- <script src="js/main.js"></script> -->
 

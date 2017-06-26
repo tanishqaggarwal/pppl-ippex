@@ -1,0 +1,109 @@
+<html lang="en" >
+<head>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="toka.css"> -->
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/pixi/bin/pixi.min.js"></script>
+	<!--<script src="../tink/bin/tink.js"></script>-->
+	<script src="/PIXI.draggable/bin/pixi.draggable.js"></script>
+	<script src="/PIXI.Input-master/bin/pixi.input.js"></script>
+	<title>Module 3 -- Physics Modules</title>
+	<!--<script src="../sound.js/sound.js"></script>-->
+</head>
+<body>
+	<div id = "intro">
+		<div class = "row">
+			<div class = "col-sm-4">
+				<div id = "intro-start-bond">
+					<h2>Cool...atoms can actually stay together. What next?</h2>
+					<p>Do they just hang around in empty space? Evidently not; you know from looking around you that atoms combine to make new stuff in innumerably different ways, from bananas to tabletops to computers.</p>
+					<p>So how do they do this? One way is through a <i>chemical bond</i>, where two or more atoms give or receive electrons to/from each other. On the right, you can see a neutral (no net electrical charge) sodium atom and a neutral chlorine atom. Let's watch them bond!</p>
+					<button class = 'btn btn-success' id = 'watch-bond'>Watch them bond</button>
+				</div>
+				<div id = "watch-bonding">
+					<h2>Chemical Bonding</h2>
+					<p class = "bond-step1">Here it goes...</p>
+					<p class = "bond-step1">Firstly, let's get a better look at the atoms themselves, or rather, their electrons. The electrons in each atom aren't just hanging around in a random orbit; they're actually separated into regions of space known as <b>energy shells</b>. The closer to the atom the energy shell is, the less energy that electron has, and the more electrically bound it is to the nucleus.</p>
+					<p class = "bond-step1">You can see to the right how the electrons are laid out in their energy levels for both the neutral sodium and chlorine atom.</p>
+					<p class = "bond-step2">Of particular interest is the outermost shell, or <b>valence shell</b>. These electrons have the highest amount of energy and can't wait to separate from their atom. </p>
+					<p class = "bond-step2">Why is the valence shell interesting? It's because of a rule called the the <b>octet rule</b> that makes the valence shell "want" to have 8 electrons, even if it means the atom will no longer be electrically neutral. This sort of configuration is super-stable for atoms, so the octet rule will override electric repulsion and will be the driving force behind the bonding process we'll see next. <a>Why does the octet rule exist?</a></p>
+					<p class = "alert alert-success" id = "octet-rule-explanation">Good question! The octet rule is a weird mathematical quirk that arises from a deeper law known as the Pauli Exclusion Principle, which basically says that two electrons cannot overlap too much. Having 8 electrons ensures a perfect distribution of electrons in space around the atom, so it's a super stable thing.</p>
+					<p class = "bond-step3">Now comes bonding time! The sodium atom just has one electron in its valence shell; it wants to get rid of that electron so that what's left is a full shell of 8 electrons. The chlorine atom has 7 electrons in its valence shell. It wants to have an extra electron to complete its shell!</p>
+					<p class = "bond-step3">So what happens is the optimal solution for both atoms: the sodium atom loses its valence electron and hands it over to the chlorine atom.</p>
+					<p class = "bond-step3">Now, the sodium atom is positively charged (since it was at first neutral, but lost an electron), and similarly, the chlorine atom is now negatively charged.</p>
+					<p class = "bond-step3">This difference in their electrical charge makes them attract each other, and now they're bonded!</p>
+
+					
+					<button class = 'btn btn-success' id = 'bonding-steps-next'>Next</button>
+				</div>
+			</div>
+			<div class = "col-sm-8">
+				<canvas id = "chemical-bond-canvas" style="border:1px solid #000000;"></canvas>
+			</div>
+		</div>
+	</div>
+	<div id = "physical-interactions-molecular-polarity">
+		<div class = "row">
+			<div class = "col-sm-4">
+				<h2>Molecular Polarity</h2>
+				<div class = "water-polarity-text-1">
+					<p>You just saw how chemical bonds can bring atoms together by making each atom electrically attracted to the other through an exchange of electrons. In the example of NaCl, the sodium atom ended up becoming positively charged and the chlorine atom became negatively charged. But does this mean molecules are neutral? It might seem so, since the total charge of the molecule balances out.</p>
+					<button class = 'btn btn-success' id = 'water'>Next</button>
+				</div>
+				<div class = "water-polarity-text-2">
+					<p>Here's a picture of a water molecule (H<sub>2</sub>O) that you're probably familiar with. In this molecule, each of the two hydrogen atoms <i>shares</i> one electron with the oxygen atom, which normally has 6 electrons in its valence shell.</p>
+					<p>Note the term <i>share</i>. The hydrogens don't give up their electrons, as sodium does to chlorine. This type of bond is called a <b>covalent bond</b> (you can think of it as a "cooperation bond"), while the sodium-chlorine bond was an <b>ionic bond</b>, because the sodium atom was <i>ionized</i> (stripped of electrons).</b></p>
+					<p>But back to the original question: is the molecule neutral? Press "Start" to explore!</p>
+					<button class = 'btn btn-success' id = 'water-polarity-start'>Start</button>
+				</div>
+				<div class = "water-polarity-text-3">
+					<p>You can drop positive and negative charges around the water molecule, exactly in the way that you did in Module 1. Click to place a negative charge, and click while pressing shift to place a positive charge. See how the charges are affected by the water molecule!</p>
+					<p>Try placing both positive and negative charges in as many places you can to see how they're affected by the water molecule. Once you've tried enough charges, you'll be able to click the "what do you notice" box below?</p>
+					<button class = 'btn btn-success' id = 'water-polarity-start'>What do you notice?</button>
+				</div>
+				<div class = "water-polarity-text-4">
+					<p>It's interesting how the positive particles generally fly away from the "hydrogen end" of the molecule and the negative particles fly away from the "oxygen" end, right?</p>
+					<p>This is because the water molecule has <i>electrical polarity</i>. One side of it repels positive charges and the other repels negative charges. You can think of these sides as "poles", like the North and South poles of a magnet.</p>
+					<p>On the next page, you'll be able to drop some water molecules in and see how they interact!</p>
+					<button class = 'btn btn-success' id = 'water-polarity-start'>Let's Go</button>
+				</div>
+			</div>
+			<div class = "col-sm-8">
+				<canvas id = "water-polarity-canvas" style="border:1px solid #000000;"></canvas>
+			</div>
+		</div>
+	</div>
+	<div id = "water-playground">
+		<div class = "row">
+			<div class = "col-sm-4">
+				<h2>Physical Bonding in Water Molecules</h2>
+				<div class = "water-polarity-text-1">
+					<p>Let's have a little fun with some water molecules! There are two things you can do here:</p>
+					<ul>
+						<li>Drop in water molecules into this simulation wherever you want by clicking, and watch how the molecules interact. </li>
+						<li>Adjust the temperature of the molecules to change how they interact! Do this slowly so that you can see how the difference in temperature affects the molecules; try to not move the slider more than a tenth of the way across at a time.</li>
+					</ul>
+					<p>This simulation starts at a temperature of about -400 degrees Fahrenheit, so the thing that you actually see here is the molecular structure of some <i>very</i> cold ice.</p>
+					<p>Aha! What you just see happening is the creation of a <i>hydrogen bonds</i>. These aren't really bonds in the real sense of sharing electrons; it's just a weak electric attraction that holds the hydrogen atom of one water molecule close to the oxygen atom of another water molecule.</p>
+					<p>Hm...looks like the molecules are definitely starting to move around a lot more right now! You'll notice that the temperature is around 30 degrees Fahrenheit. This is the freezing/melting point of water, and what's happening is that the water is turning into a liquid!</p>
+					<button class = 'btn btn-success' id = 'water'>Next</button>
+				</div>
+			</div>
+			<div class = "col-sm-8">
+				<canvas id = "water-playground-canvas" style="border:1px solid #000000;"></canvas>
+			</div>
+		</div>
+	</div>
+	<!-- attach JavaScripts -->
+	<script src="/js/jquery-1.10.2.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="res/js/utils/common_textures.js"></script>
+	<script src="res/js/utils/vectors.js"></script>
+	<script src="res/js/utils/general_physics.js"></script>
+	<script src="res/js/utils/logging.js"></script>
+	<script src="res/js/module-3/water-polarity-physics.js"></script>
+	<script src="res/js/module-3/water-polarity-animation.js"></script>
+	<script src="res/js/module-3/water-playground-physics.js"></script>
+	<script src="res/js/module-3/water-playground-animation.js"></script>
+</body>
+</html>

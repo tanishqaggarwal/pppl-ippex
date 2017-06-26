@@ -1,0 +1,155 @@
+<html lang="en" >
+<head>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="toka.css"> -->
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/pixi/bin/pixi.min.js"></script>
+	<!--<script src="../tink/bin/tink.js"></script>-->
+	<script src="/PIXI.draggable/bin/pixi.draggable.js"></script>
+	<script src="/PIXI.Input-master/bin/pixi.input.js"></script>
+	<title>Module 1 -- Physics Modules</title>
+	<!--<script src="../sound.js/sound.js"></script>-->
+	<style>
+		.table-fixed thead {
+			width: 97%;
+		}
+		.table-fixed tbody {
+			height: 230px;
+			overflow-y: auto;
+			width: 100%;
+		}
+		.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+			display: block;
+		}
+		.table-fixed tbody td, .table-fixed thead > tr> th {
+			float: left;
+			border-bottom-width: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id = "intro">
+		<div class = "row">
+			<div class = "col-sm-3"><div id = "intro-text-1">
+				<h2>What am I Looking At?</h2>
+				<p>Here's a situation you're probably familiar with! We've got a light plugged into a wall, and (surprise) it's lit up!</p>
+				<p>What makes this happen? Let's take a <u>particular</u>ly close look.</p>
+				<button class = 'btn btn-success' id = 'show-electrons'>View Electrons</button>
+
+			</div>
+			<div id = "intro-text-2">
+				<h2>Ah!</h2>
+				<p>At some point, you've probably learned that electricity is the flow of particles, called <b>electrons</b>, through a wire.</p>
+				<p>As the electrons flow through the light bulb, a little bit of the energy of their motion is converted into the light energy that the bulb emits.</p>
+				<p>But why do the electrons flow at all? Let's take an even <i>closer</i> look.</p>
+				<button class = 'btn btn-success' id = 'show-traffic-jam'>Let's Go</button>
+				<p>Also, here's a <a class = "text-warning" id = "ac-disclaimer">quick disclaimer about this animation</a></p>
+				<p class = "alert alert-warning" id = "ac-disclaimer-text">This animation is a little inaccurate, because wall outlets provide what is called <b>alternating current (AC)</b>. In a real wall-powered circuit, the electrons move back and forth. Instead, in this animation, they move in <b>direct current (DC)</b>: a simple, unidirectional path. Take a look at <a href = "" target = "_blank">this</a> to get a better understanding of AC versus DC.</p>
+			</div>
+		</div>
+		
+		<div class = "col-sm-9">
+			<canvas id = "circuit-flow-canvas" style="border:1px solid #000000;"></canvas>
+		</div>
+	</div>
+</div>
+<div id = "traffic-jam">
+	<div class = "row">
+		<div class = "col-sm-12">
+			<h2>For example...</h2>
+			<p>Why don't they do this and get stuck in a traffic jam? Why do they move at all??</p>
+			<canvas id = "traffic-jam-canvas" style="border:1px solid #000000;"></canvas>
+			<br />
+			<button type="button" id = "why-move-button" class="btn btn-success">Why?</button>
+		</div>
+	</div>
+<br />
+</div>
+<div id = "particle-interactions">
+	<div class = "row">
+		<div class = "col-sm-4">
+			<h2>The Coloumb Force</h2>
+			<p>The answer is that electrons hate to be around each other. They repel one another due to their negative <b>electric charge</b>.</p>
+			<p>The repulsive interaction between the two electrons is known as the electric force, or the <b>Coloumb force</b>. Let's explore how this force works.</p>
+			<p>On the right, an electron's been anchored to the center of the screen. Click to place an electron anywhere around the electron, and see where it goes!</p>
+			<p>The results of your experiments will be tabulated below. You'll be able to click "Next" when you've collected enough data points from both close to and far away from the central electron.</p>
+			<button type="button" id = "graphbutton" class="btn btn-success disabled">Next</button>
+			<br />
+			<table class = "table table-striped table-bordered table-compact table-fixed" id = "pi-data-table">
+				<thead>
+					<tr>
+						<th class = "col-xs-4">Coordinates of Release</th>
+						<th class = "col-xs-4">Distance from Center At Release</th>
+						<th class = "col-xs-4">Maximum speed of released electron</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div class = "col-sm-8">
+			<canvas id = "particle-interaction-canvas" style="border:1px solid #000000;"></canvas>
+		</div>
+	</div>
+	<div class = "row" id = "graph-section">
+		<div class = "col-sm-4">
+			<h2>The Coloumb Force</h2>
+			<p>Here is all the data that you collected just now, arranged in graphical form.</p>
+			<p>Do you see a trend in the data?</p>
+			<p><a>Yeah, I do!</a></p>
+			<p><a>No, what is it?</a></p>
+			<div class = "alert alert-success" id = "coloumb-relation-explanation">
+				<p>Excellent! You can see that as distances get really small, the repulsion is really, really large! Conversely, on the right, you can see that despite growing the distance quite a bit, the repulsion doesn't change by very much.</p>
+				<p>This type of relation is actually called an <b>inverse square law</b>, because the repulsion is proportional to the reciprocal of the square of the distance. We write this as F &prop; 1/d<sup>2</sup></p>.
+			</div>
+			<button type="button" id = "next-pi-with-positive" class="btn btn-success">Next</button>
+			</div>
+			<div class = "col-sm-8">
+				<div id = "coloumb-graph" width = "600" height = "400"></div>
+			</div>
+		</div>
+		<div class = "row" id = "violent-but-balanced-force">
+			<div class = "col-sm-4">
+				<h2>A Violent, but Balanced Force</h2>
+				<div id = "positive-page-1">
+					<p>You've just seen an example of how negative charges can repel negative charges, and how that repulsion depends on the distance between negative charges.</p>
+					<p>But have you ever heard the saying "opposites attract and like repels?" The concept actually has its origins in electricity. The counterpart of negative charges (the electron) are <b>positive charges</b>, which attract negative particles!</p>
+					<p>You can explore this idea in the same simulation as we had before. This time, press shift while you're clicking to place a positive charge (in this simulation, it's a special type of positive charge called a <b>positron</b>) instead of a negative one!</p>
+					<button type="button" id = "positive-page-action-2" class="btn btn-success">What do you notice?</button>
+				</div>
+				<div id = "positive-page-2">
+					<p>The positive charges move with pretty much the same speed, but in the opposite direction, right?</p>
+					<p>This is because everything about the particles we've got here is the same, except for their charge. The "oppositeness" of the charge basically flips the motion around! In fact, since this particular particle is exactly like an electron except for its charge, it's called a <i>positron</i> or sometimes even an <i>antielectron</i>. It's very different from a proton, which you may have heard is a component of the nucleus of atoms. The proton is a lot more massive than the positron, and is fundamentally a different type of matter.</p>
+					<p>You now know that like charges repel, but opposite charges attract. So I've got an interesting problem for you...</p>
+					<button type="button" id = "atom-conundrum-action" class="btn btn-success">What is it?</button>
+				</div>
+			</div>
+			<div class = "col-sm-8">
+				<div id = "second-pi-container"></div>
+			</div>
+		</div>
+		<div class = "row" id = "atom-conundrum">
+			<div class = "col-sm-12">
+				<h2>The Atom Conundrum</h2>
+				<img src = "http://www.livescience.com/images/i/000/047/720/original/lithium-atom.jpg?interpolation=lanczos-none&downsize=*:600"></div>
+				<p>Protons attract electrons, and repel other protons. If you’re familiar with a basic model of the atom, you know that the nucleus is comprised of protons and non-electrically charged particles called neutrons. So why does the nucleus stay together?</p>
+				<p>This problem puzzled scientists for decades. We’ll take a look at this issue, and our modern resolution of it, in the next module.</p>
+			</div>
+		</div>
+	</div>
+	<!--TRAFFIC JAM, ELECTRON REPULSION/PROTON ATTRACTION INTERACTION SHOWER,-->
+	<!-- attach JavaScripts -->
+	<script src="/js/jquery-1.10.2.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="res/js/module-1/page.js"></script>
+	<script src="res/js/utils/vectors.js"></script>
+	<script src="res/js/utils/logging.js"></script>
+	<script src="res/js/utils/common_textures.js"></script>
+	<script src="res/js/utils/general_physics.js"></script>
+	<script src="res/js/module-1/circuit-flow.js"></script>
+	<script src="res/js/module-1/traffic-jam.js"></script>
+	<script src="res/js/module-1/particle-interactions.js"></script>
+	<script src="res/js/module-1/coloumb-graph.js"></script>
+</body>
+</html>

@@ -8,12 +8,9 @@ function play() {
         ext.aux.value = (((auxBut.x - contPos.auxSlider.pos[0] - contPos.arrowWidth - contPos.buffer)/contPos.sliderRange)*(ext.aux.max-ext.aux.min) + ext.aux.min).toFixed(2);
         ext.mag.value = (((magBut.x - contPos.magSlider.pos[0] - contPos.arrowWidth - contPos.buffer)/contPos.sliderRange)*(ext.mag.max-ext.mag.min) + ext.mag.min).toFixed(2);
 
-
-
         magVal = ext.mag.value;
         densVal = ext.dens.value;
         powVal = ext.aux.value;
-
 
         if (count % 2 < 0.1 || count == 0 || forceCalculation) {
             forceCalculation = false;

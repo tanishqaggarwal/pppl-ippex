@@ -1,0 +1,129 @@
+<html lang="en" >
+<head>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="toka.css"> -->
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/pixi/bin/pixi.min.js"></script>
+	<!--<script src="../tink/bin/tink.js"></script>-->
+	<script src="/PIXI.draggable/bin/pixi.draggable.js"></script>
+	<script src="/PIXI.Input-master/bin/pixi.input.js"></script>
+	<!--<script src="../sound.js/sound.js"></script>-->
+	<title>Module 2</title>
+</head>
+<body>
+	<div id = "intro">
+		<div class = "row">
+			<div class = "col-sm-4"><h2>The puzzle</h2>
+			<p>You've probably seen this model of the atom before. In the center is the <b>nucleus</b>, composed of positively charged particles, called <b>protons</b>, and particles with no charge, called <b>neutrons</b>. Electrons are spinning happily around the nucleus of the atom! But there's a problem here.</p>
+			<p>Why does the nucleus stay together at all? We know from the last unit that like charges repel; shouldn't the protons repel each other and make the nucleus blast apart?</p>
+			<p>Let's explore this.</p>
+			<button class = 'btn btn-success' id = 'proton-collision-slide'>Let's Go</button>
+			</div>
+			<div class = "col-sm-8">
+			<canvas id = "introatom" style="border:1px solid #000000;"></canvas>
+			</div>
+		</div>
+	</div>
+	<div id = "proton-collision-animation">
+		<div class = "row">
+			<div class = "col-sm-4">
+				<div id = "protoncollision-originaltext"><h2>Why do protons stick together?</h2>
+					<p>Is there any way to get just <i>two</i> protons to stick together?</p>
+					<p>Try this experiment! Play with the controls on the right to move the protons (the red dots) closer or farther together, and use the energy slider to change how fast the protons will be hurled at each other.</p>
+				</div>
+					<div id = "protoncollision-newtext">
+						<h2 id = "header-text">Woah!</h2>
+						<p>Somehow, by pushing the protons together, we got them to snap together!</p>
+
+						<p>Let's actually explore what happened, on the next slide.</p>
+						<p>Also, side note: protons are also called <i>nucleons</i>. What you just did was fuse two nucleons together. You just did some nuclear fusion!</p>
+						<button class = 'btn btn-success' id = 'strong-nuclear-slide'>Next</button>
+					</div>
+				</div>
+				<div class = "col-sm-8">
+					<div class = "row">
+						<div class = "col-sm-12" id = "collision-canvas-parent"><canvas id = "proton-collision-canvas" style="border:1px solid #000000;"></canvas>
+						</div>
+					</div>
+					<br />
+					<div class = "row">
+						<div class="col-sm-3">
+							<p class = "text-center">Initial Distance</p>
+							<input type = "range" min = "2E-15" max = "10E-15" step = "1E-17" id = "distanceslide" />
+							<p><span id = "distancemeter"></span> fm (1 fm = 10^-15 m)</p>
+						</div>
+						<div class="col-sm-2 col-sm-offset-2">
+							<button type="button" id = "startbutton" class="btn btn-success">Release</button>
+						</div>
+						<div class="col-sm-3 col-sm-offset-2">
+							<p class = "text-center">Initial Proton Energy</p>
+							<input type = "range" min = "0" max = "8.5" step = "0.01" id = "energyslide" />
+							<p><span id = "energymeter"></span> MeV</p>
+							<input type = "textbox" id = "speed" disabled>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+		</div>
+		<div id = "strong-nuclear-animation">
+			<div class = "row">
+				<div class = "col-sm-4">
+					<h2 id = "header-text">The Strong Nuclear Force</h2>
+					<div id = "rest-of-text"><p>What you just saw was the <b>strong nuclear force</b> in action. The strong nuclear force kicks in when the protons are REALLY close together and overpowers the repulsion of the Coloumb force.</p>
+					<p>Here's a good analogy for this: you can think of the protons as two balls with a hook on them, separated by a spring. Usually, the spring (the electric force) pushes the protons back. But if the protons push together with enough energy, their hooks lock together and keep them together despite the repulsion of the spring.</p>
+					<p><a id = "replay-strong-nuclear-analogy">Replay the animation</a> if you missed it.</p>
+					</div>
+					<button type="button" id = "mass-defect-slide" class="btn btn-success">Next</button>
+				</div>
+				<div class = "col-sm-8">
+					<div class = "row">
+						<div class = "col-sm-12">
+							<canvas id = "strong-nuclear-actual" style="border:1px solid #000000;"></canvas>
+						</div>
+					</div>
+					<br />
+					<div class = "row">
+						<div class = "col-sm-12">
+							<canvas id = "strong-nuclear-analogy" style="border:1px solid #000000;"></canvas>
+						</div>
+					</div>
+					<br />
+				</div>
+			</div>
+		</div>
+		<div id = "mass-defect-explanation">
+			<div class = "row">
+				<div class = "col-sm-4">
+					<h2 id = "header-text">What's more...<i>E=mc<sup>2</sup></i></h2>
+					<div id = "rest-of-text"><p id = "mass-defect-1">Think of what happens when things collide. You hear a bang, right? In other words, energy is released in an often violent, explosive way.
+	<br />With the strong nuclear force, things get even more intense. When the protons fuse, they both lose a little bit of mass. Let's explore what happens.
+					 (<a id = "
+					mass-defect-animation-trigger" class = "change-mass-defect-text">Play animation</a>)</p>
+					<div id = "mass-defect-2">
+						<p>There are a couple of weird principles that come into play. One is Einstein's famous equation, E = mc<sup>2</sup>, which basically says that mass is the same thing as energy.</p> 
+						<p>But the big thing is this: the c in the equation is the speed of light, a HUGE number (11 BILLION miles per hour!). You can see that even the tiniest bits of matter, when multiplied by c SQUARED, contain a <i>ton</i> of energy.</p>
+						<p>The second idea is the law of conservation of energy. This is important, because the proton mass can't just "disappear"--what happens is that it's converted into energy that's dissipated throughout the system.</p>
+					</div>
+					</div>
+				</div>
+				<div class = "col-sm-8">
+					<div class = "row">
+						<div class = "col-sm-12">
+							<canvas id = "mass-defect-canvas" style="border:1px solid #000000;"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/jquery-1.10.2.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src = "/modules/res/js/module-2/collision-physics.js"></script>
+		<script src = "/modules/res/js/module-2/intro-animation.js"></script>
+		<script src = "/modules/res/js/module-2/proton-collision-animation.js"></script>
+		<script src = "/modules/res/js/module-2/analogy-animation.js"></script>
+		<script src = "/modules/res/js/module-2/mass-defect-animation.js"></script>
+		<script src = "/modules/res/js/module-2/page.js"></script>
+	</body>
+	</html>
